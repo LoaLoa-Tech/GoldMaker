@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+</head>
+<body>
+	<%
+      if(message!=""){
+      %>
+      <div style="color:red;background-color:pink;border:1px solid red;"><%= message %></div>
+      <%}%>
+<form method="post" action="/login" align="center">
+<label for="username">Username:</label>
+<input id="username" name="username" type="text" />
+<br />
+
+<label for="password">Password:</label>
+<input id="password" name="password" type="password" />
+<button type="submit">Login</button>
+</form>
+</body>
+</html>
