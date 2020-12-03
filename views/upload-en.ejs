@@ -54,11 +54,6 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css"
     />
-<style>
-.editable:hover{
-	border:1px solid;
-}
-</style>
   </head>
 
   <body class="text-primary">
@@ -93,32 +88,95 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
       </div>
     </nav>
     <!-- End: Navigation with Button -->
-  <section class="my-5">
-    <style>
-      a {
-        display: block;
-      }
-    </style>
-    <div class="container">
-      <h2>Content edit</h2>
-    <a href="/admin-vi">Vietnamese content edit.</a>
-    <a href="/admin-en">English content edit.</a>
-      <h2>Upload file</h2>
-    <a href="/upload-vi">Vietnamese upload file.</a>
-    <a href="/upload-en">English upload file.</a></div>
-    
-</section> 
+    <section class="my-5">
+      <div class="container">
+        <form
+          action="/upload-en"
+          enctype="multipart/form-data"
+          method="post"
+          class="mb-3"
+        >
+          <div class="form-group">
+            <label for="file">Choose file</label>
+            <input
+              type="file"
+              name="file"
+              class="form-control-file"
+              id="file"
+            />
+          </div>
+        
+
+          <button
+            type="submit"
+            value="Upload"
+            class="btn btn-sm btn-outline-primary"
+          >
+            Upload
+          </button>
+        </form>
+        <%= message %>
+        <a href="/video">update video here!</a>
+      </div>
+    </section>
+    <!-- Start: Footer Dark -->
+    <div class="footer-dark">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <!-- Start: Services -->
+            <div class="col-sm-6 col-md-3 item">
+              <h3>Services</h3>
+              <ul>
+                <li>
+                  <a href="#"><strong>Six&nbsp;Systems</strong></a>
+                </li>
+                <li>
+                  <a href="#"><strong>Five Signals</strong></a>
+                </li>
+              </ul>
+            </div>
+            <!-- End: Services -->
+            <!-- Start: About -->
+            <div class="col-sm-6 col-md-3 item">
+              <h3>About</h3>
+              <p>
+                <strong>Link IB:&nbsp;</strong
+                >https://vi.liteforex.com/?uid=114358575<br /><strong
+                  >Telegram</strong
+                >
+                : <strong>@linhthatsat</strong><br /><strong
+                  >Chanel:&nbsp;https://t.me/sixsystems</strong
+                ><br /><strong>Hotline </strong>: 0708744444
+              </p>
+            </div>
+            <!-- End: About -->
+            <!-- Start: Footer Text -->
+            <div class="col-md-6 item text">
+              <h3>Money Maker</h3>
+              <p>
+                Tôi chưa từng Marketing, vì tôi muốn các bạn hiểu sự rủi ro của
+                thị&nbsp;<br />trường tài chính khi tham gia mới tìm đến đây, và
+                tôi luôn muốn giảm thiểu rủi ro cho NĐT trong các sản phẩm của
+                mình, và đây là những gì tôi có, hãy đọc và nếu thấy nó có ích,
+                bạn hãy liên hệ với tôi để sử dụng hoặc trở thành đối tác với
+                tôi!
+              </p>
+            </div>
+            <!-- End: Footer Text -->
+          </div>
+          <!-- Start: Copyright -->
+          <p class="copyright">
+            Made by <a href="https://loaloa.tech">Loa Loa Tech</a>
+          </p>
+          <!-- End: Copyright -->
+        </div>
+      </footer>
     </div>
     <!-- End: Footer Dark -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
     <script src="/assets/js/script.min.js?h=be38833756eec81f7d0744dc18c888c9"></script>
-                     <!-- INSERTING SUMMERNOTE -->
-		                     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-				                         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-							 <!-- custom script to handle summernote and form sending -->
-							 <script src="/assets/js/summernote-client.js"></script>
-
   </body>
 </html>
