@@ -54,6 +54,11 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css"
     />
+<style>
+.editable:hover{
+	border:1px solid;
+}
+</style>
   </head>
 
   <body class="text-primary">
@@ -77,13 +82,10 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
         </button>
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/">Việt Nam</a></li>
+            <li class="nav-item"><a class="nav-link" href="/en">English</a></li>
           </ul>
           <span class="navbar-text actions">
-            <a
-              class="btn btn-light action-button"
-              role="button"
-              href="/download"
+            <a class="btn btn-light action-button" role="button" href="/download"
               >Tải ứng dụng</a
             ></span
           >
@@ -100,19 +102,8 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
         frameborder="0"
       ></iframe>
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-5">
-            <img
-              class="img-fluid"
-              data-aos="fade-right"
-              src="/assets/img/Bitcoin%20P2P-amico.svg?h=35993449df8024cf58dc180270a98013"
-            />
-          </div>
-          <div
-            class="col-12 col-sm-12 col-md-6 col-lg-7 d-md-flex align-items-md-center"
-          >
-            <%- include("./en/1.html"); %>
-          </div>
+        <div class="row editable" name="content-top">
+		<%- include("content-top.html") %>
         </div>
       </div>
     </header>
@@ -124,34 +115,47 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
     <section class="mb-5">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4"><%- include("./en/2.html"); %></div>
-          <div class="col-lg-4"><%- include("./en/3.html"); %><</div>
-          <div class="col-lg-4">
-            <%- include("./en/4.html"); %><img
-              class="img-fluid"
-              src="/assets/img/Product%20tour-pana.svg?h=3e2f9d0568f4d7623d15f13a40b3418c"
-            /><
+          <div class="col-lg-4 editable" name="content-bleft">
+		  <%- include("content-bleft.html") %>
+          </div>
+          <div class="col-lg-4 editable" name="content-bmiddle">
+		  <%- include("content-bmiddle.html") %>
+          </div>
+          <div class="col-lg-4 editable" name="content-bright">
+		  <%- include("content-bright.html") %>
           </div>
         </div>
       </div>
     </section>
+    <!-- summernote -->
+    <div class="container">
+    <div class="row text-<%=type%>"><%=message%></div>
+    <form method="post" action="/edit">
+	    <input type="text" name="part" id="part" style="visibility:hidden" /><br />
+	    <textarea id="summernote" name="content" ></textarea>
+	    <br />
+	    <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+    </div>
     <!-- Start: Footer Dark -->
     <div class="footer-dark">
       <footer>
         <div class="container">
           <div class="row">
             <!-- Start: Services -->
-            <div class="col-sm-6 col-md-3 item">
-              <%- include("./en/5.html"); %>
+            <div class="col-sm-6 col-md-3 item editable" name="footer-left">
+		    <%- include("footer-left.html") %>
             </div>
             <!-- End: Services -->
             <!-- Start: About -->
-            <div class="col-sm-6 col-md-3 item">
-              <%- include("./en/6.html"); %>
+            <div class="col-sm-6 col-md-3 item editable" name="footer-middle">
+		    <%- include("footer-middle.html") %>
             </div>
             <!-- End: About -->
             <!-- Start: Footer Text -->
-            <div class="col-md-6 item text"><%- include("./en/7.html"); %></div>
+            <div class="col-md-6 item text editable" name="footer-right">
+		    <%- include("footer-right.html") %>
+            </div>
             <!-- End: Footer Text -->
           </div>
           <!-- Start: Copyright -->
@@ -167,5 +171,11 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
     <script src="/assets/js/script.min.js?h=be38833756eec81f7d0744dc18c888c9"></script>
+                     <!-- INSERTING SUMMERNOTE -->
+		                     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+				                         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+							 <!-- custom script to handle summernote and form sending -->
+							 <script src="/assets/js/summernote-client.js"></script>
+
   </body>
 </html>

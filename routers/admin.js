@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-module.exports = router.get("/en", (req, res) => {
+module.exports = router.get("/admin", (req, res) => {
   var data = require("../data");
-  res.render("en", { data });
+  res.render("admin", { data });
 });
