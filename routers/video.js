@@ -12,14 +12,12 @@ router.get("/video", (req, res) => {
 router.post("/video", (req, res) => {
   var { password, URL } = req.body;
   var message = "";
-  if (URL !== "" && password == "Ducga1609") {
-    fs.writeFileSync(path.join(__dirname, "../data/index.js"), "");
-    fs.writeFileSync(
-      path.join(__dirname, "../data/index.js"),
-      `module.exports = {youtube:'${URL}'}`
-    );
-    message = "Cập nhật thành công";
-  } else message = "Sai khẩu khẩu hoặc  thiếu URL.";
+  fs.writeFileSync(path.join(__dirname, "../data/index.js"), "");
+  fs.writeFileSync(
+    path.join(__dirname, "../data/index.js"),
+    `module.exports = {youtube:'${URL}'}`
+  );
+  message = "Cập nhật thành công";
   res.render("video", { message });
 });
 module.exports = router;
