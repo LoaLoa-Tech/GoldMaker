@@ -57,40 +57,8 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
   </head>
 
   <body class="text-primary">
-    <!-- Start: Navigation with Button -->
-    <nav
-      class="navbar navbar-dark navbar-expand-md sticky-top bg-primary navigation-clean-button"
-    >
-      <div class="container">
-        <a class="navbar-brand text-light" href="/"
-          ><img
-            class="img-fluid logo"
-            src="/assets/img/stock.png?h=b98d12993b2197eca7123d49b6c3d118"
-          /><strong>Money Maker</strong></a
-        ><button
-          data-toggle="collapse"
-          class="navbar-toggler"
-          data-target="#navcol-1"
-        >
-          <span class="sr-only">Toggle navigation</span
-          ><span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navcol-1">
-          <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/">English</a></li>
-          </ul>
-          <span class="navbar-text actions">
-            <a
-              class="btn btn-light action-button"
-              role="button"
-              href="/download"
-              >Tải ứng dụng</a
-            ></span
-          >
-        </div>
-      </div>
-    </nav>
-    <!-- End: Navigation with Button -->
+    <%-include('./partials/nav-vi.ejs') ;%>
+
     <header class="mb-5">
       <iframe
         scrolling="no"
@@ -111,7 +79,7 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
           <div
             class="col-12 col-sm-12 col-md-6 col-lg-7 d-md-flex align-items-md-center"
           >
-            <%- include("./en/1.html"); %>
+            <%- include("./vi/1.html"); %>
           </div>
         </div>
       </div>
@@ -124,13 +92,13 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
     <section class="mb-5">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4"><%- include("./en/2.html"); %></div>
-          <div class="col-lg-4"><%- include("./en/3.html"); %><</div>
+          <div class="col-lg-4"><%- include("./vi/2.html"); %></div>
+          <div class="col-lg-4"><%- include("./vi/3.html"); %></div>
           <div class="col-lg-4">
-            <%- include("./en/4.html"); %><img
+            <%- include("./vi/4.html"); %><img
               class="img-fluid"
               src="/assets/img/Product%20tour-pana.svg?h=3e2f9d0568f4d7623d15f13a40b3418c"
-            /><
+            />
           </div>
         </div>
       </div>
@@ -142,16 +110,16 @@ trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muố
           <div class="row">
             <!-- Start: Services -->
             <div class="col-sm-6 col-md-3 item">
-              <%- include("./en/5.html"); %>
+              <%- include("./vi/5.html"); %>
             </div>
             <!-- End: Services -->
             <!-- Start: About -->
             <div class="col-sm-6 col-md-3 item">
-              <%- include("./en/6.html"); %>
+              <%- include("./vi/6.html"); %>
             </div>
             <!-- End: About -->
             <!-- Start: Footer Text -->
-            <div class="col-md-6 item text"><%- include("./en/7.html"); %></div>
+            <div class="col-md-6 item text"><%- include("./vi/7.html"); %></div>
             <!-- End: Footer Text -->
           </div>
           <!-- Start: Copyright -->

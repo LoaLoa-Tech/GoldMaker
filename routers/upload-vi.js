@@ -32,10 +32,9 @@ router.post("/upload-vi", (req, res, next) => {
       next();
     } else {
       try {
-        console.log(files.file);
         fs.renameSync(
           files.file.path,
-          path.join(__dirname, "../public/upload-vi/", files.file.name)
+          path.join(__dirname, "../public/upload-vi/", xss(files.file.name))
         );
         res.render("upload-vi", { message: xss(message) });
       } catch {

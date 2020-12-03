@@ -34,7 +34,7 @@ router.post("/upload-en", (req, res, next) => {
       try {
         fs.renameSync(
           files.file.path,
-          path.join(__dirname, "../public/upload-en/", files.file.name)
+          path.join(__dirname, "../public/upload-en/", xss(files.file.name))
         );
         res.render("upload-en", { message: xss(message) });
       } catch {
