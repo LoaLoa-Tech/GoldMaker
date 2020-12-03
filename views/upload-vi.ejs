@@ -1,181 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <title>Monney Maker</title>
-    <meta name="twitter:title" content="Monney Maker" />
-    <meta name="twitter:card" content="summary" />
-    <meta
-      property="og:image"
-      content="/assets/img/Bitcoin%20P2P-amico.svg?h=35993449df8024cf58dc180270a98013"
-    />
-    <meta
-      name="description"
-      content="Tôi chưa từng Marketing, vì tôi muốn các bạn hiểu sự rủi ro của thị
-trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muốn giảm thiểu rủi ro cho NĐT trong các sản phẩm của mình, và đây là những gì tôi có, hãy đọc và nếu thấy nó có ích, bạn hãy liên hệ với tôi để sử dụng hoặc trở thành đối tác với tôi!"
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      name="twitter:image"
-      content="/assets/img/Bitcoin%20P2P-amico.svg?h=35993449df8024cf58dc180270a98013"
-    />
-    <meta
-      name="twitter:description"
-      content="Tôi chưa từng Marketing, vì tôi muốn các bạn hiểu sự rủi ro của thị
-trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muốn giảm thiểu rủi ro cho NĐT trong các sản phẩm của mình, và đây là những gì tôi có, hãy đọc và nếu thấy nó có ích, bạn hãy liên hệ với tôi để sử dụng hoặc trở thành đối tác với tôi!"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="300x300"
-      href="/assets/img/stock.png?h=b98d12993b2197eca7123d49b6c3d118"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/flatly/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Baloo+Bhai+2:400,700&amp;subset=vietnamese"
-    />
-    <link
-      rel="stylesheet"
-      href="/assets/css/styles.min.css?h=e2e63ab9607cfeac32fcbf55636a9fde"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css"
-    />
-  </head>
-
+  <%-include("./partials/head") %>
   <body class="text-primary">
-    <!-- Start: Navigation with Button -->
-    <nav
-      class="navbar navbar-dark navbar-expand-md sticky-top bg-primary navigation-clean-button"
-    >
-      <div class="container">
-        <a class="navbar-brand text-light" href="/"
-          ><img
-            class="img-fluid logo"
-            src="/assets/img/stock.png?h=b98d12993b2197eca7123d49b6c3d118"
-          /><strong>Money Maker</strong></a
-        ><button
-          data-toggle="collapse"
-          class="navbar-toggler"
-          data-target="#navcol-1"
-        >
-          <span class="sr-only">Toggle navigation</span
-          ><span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navcol-1">
-          <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/en">English</a></li>
-          </ul>
-          <span class="navbar-text actions">
-            <a
-              class="btn btn-light action-button"
-              role="button"
-              href="/download"
-              >Tải ứng dụng</a
-            ></span
-          >
-        </div>
-      </div>
-    </nav>
-    <!-- End: Navigation with Button -->
+    <%-include('./partials/nav-vi.ejs') ;%>
     <section class="my-5">
       <div class="container">
-        <form
-          action="/upload-vi"
-          enctype="multipart/form-data"
-          method="post"
-          class="mb-3"
-        >
-          <div class="form-group">
-            <label for="file">Choose file</label>
-            <input
-              type="file"
-              name="file"
-              class="form-control-file"
-              id="file"
-            />
-          </div>
+        <div class="row">
+          <div class="col-md-4"><%-include("./partials/sidebar")%></div>
+          <div class="col-md-8">
+            <form
+              action="/upload-vi"
+              enctype="multipart/form-data"
+              method="post"
+              class="mb-3"
+            >
+              <div class="form-group">
+                <label for="file">Chọn file</label>
+                <input
+                  type="file"
+                  name="file"
+                  class="form-control-file"
+                  id="file"
+                />
+              </div>
 
-          <button
-            type="submit"
-            value="Upload"
-            class="btn btn-sm btn-outline-primary"
-          >
-            Upload
-          </button>
-        </form>
-        <%= message %>
-        <a href="/video">update video here!</a>
+              <button
+                type="submit"
+                value="Upload"
+                class="btn btn-sm btn-outline-primary"
+              >
+                Tải lên
+              </button>
+            </form>
+            <%= message %>
+          </div>
+        </div>
       </div>
     </section>
-    <!-- Start: Footer Dark -->
-    <div class="footer-dark">
-      <footer>
-        <div class="container">
-          <div class="row">
-            <!-- Start: Services -->
-            <div class="col-sm-6 col-md-3 item">
-              <h3>Services</h3>
-              <ul>
-                <li>
-                  <a href="#"><strong>Six&nbsp;Systems</strong></a>
-                </li>
-                <li>
-                  <a href="#"><strong>Five Signals</strong></a>
-                </li>
-              </ul>
-            </div>
-            <!-- End: Services -->
-            <!-- Start: About -->
-            <div class="col-sm-6 col-md-3 item">
-              <h3>About</h3>
-              <p>
-                <strong>Link IB:&nbsp;</strong
-                >https://vi.liteforex.com/?uid=114358575<br /><strong
-                  >Telegram</strong
-                >
-                : <strong>@linhthatsat</strong><br /><strong
-                  >Chanel:&nbsp;https://t.me/sixsystems</strong
-                ><br /><strong>Hotline </strong>: 0708744444
-              </p>
-            </div>
-            <!-- End: About -->
-            <!-- Start: Footer Text -->
-            <div class="col-md-6 item text">
-              <h3>Money Maker</h3>
-              <p>
-                Tôi chưa từng Marketing, vì tôi muốn các bạn hiểu sự rủi ro của
-                thị&nbsp;<br />trường tài chính khi tham gia mới tìm đến đây, và
-                tôi luôn muốn giảm thiểu rủi ro cho NĐT trong các sản phẩm của
-                mình, và đây là những gì tôi có, hãy đọc và nếu thấy nó có ích,
-                bạn hãy liên hệ với tôi để sử dụng hoặc trở thành đối tác với
-                tôi!
-              </p>
-            </div>
-            <!-- End: Footer Text -->
-          </div>
-          <!-- Start: Copyright -->
-          <p class="copyright">
-            Made by <a href="https://loaloa.tech">Loa Loa Tech</a>
-          </p>
-          <!-- End: Copyright -->
-        </div>
-      </footer>
-    </div>
-    <!-- End: Footer Dark -->
+
+    <%-include('./partials/footer-vi.ejs') %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>

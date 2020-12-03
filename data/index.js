@@ -1,1 +1,1 @@
-module.exports = {youtube:'1213'}
+module.exports = {youtube:''}
