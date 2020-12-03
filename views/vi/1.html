@@ -1,6 +1,6 @@
-
-              <p>
-              <b>
-              haha</b></p><p><b><br></b></p><ol><li><b>hih</b></li><li><b>hehe<br></b>
-              </li></ol>
-              
+For example, if <code>fs.writeFile()</code> is called twice in a row, first to write the
+string <code>'Hello'</code>, then to write the string <code>', World'</code>, the file would contain
+<code>'Hello, World'</code>, and might contain some of the file's original data (depending
+on the size of the original file, and the position of the file descriptor). If
+a file name had been used instead of a descriptor, the file would be guaranteed
+to contain only <code>', World'</code>.

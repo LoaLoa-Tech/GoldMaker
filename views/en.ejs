@@ -23,7 +23,7 @@
           <div
             class="col-12 col-sm-12 col-md-6 col-lg-7 d-md-flex align-items-md-center"
           >
-            <div><%- include("./en/1.html"); %></div>
+            <div data-aos="fade-up"><%- include("./en/1.html"); %></div>
           </div>
         </div>
       </div>
@@ -47,37 +47,6 @@
         </div>
       </div>
     </section>
-    <!-- Start: Footer Dark -->
-    <div class="footer-dark">
-      <footer>
-        <div class="container">
-          <div class="row">
-            <!-- Start: Services -->
-            <div class="col-sm-6 col-md-3 item">
-              <%- include("./en/5.html"); %>
-            </div>
-            <!-- End: Services -->
-            <!-- Start: About -->
-            <div class="col-sm-6 col-md-3 item">
-              <%- include("./en/6.html"); %>
-            </div>
-            <!-- End: About -->
-            <!-- Start: Footer Text -->
-            <div class="col-md-6 item text"><%- include("./en/7.html"); %></div>
-            <!-- End: Footer Text -->
-          </div>
-          <!-- Start: Copyright -->
-          <p class="copyright">
-            Made by <a href="https://loaloa.tech">Loa Loa Tech</a>
-          </p>
-          <!-- End: Copyright -->
-        </div>
-      </footer>
-    </div>
-    <!-- End: Footer Dark -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
-    <script src="/assets/js/script.min.js?h=be38833756eec81f7d0744dc18c888c9"></script>
+    <%-include("./partials/footer-en")%>
   </body>
 </html>
