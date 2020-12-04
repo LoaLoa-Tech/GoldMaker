@@ -21,12 +21,16 @@ router.post("/upload-vi", (req, res, next) => {
   /**
    * REMOVE ALL FILE
    */
-  fs.readdirSync(path.join(__dirname, "../public/upload-vi")).forEach(
-    (file) => {
-      var rm = path.join(__dirname, "../public/upload-vi", file);
-      fs.unlinkSync(rm);
-    }
-  );
+  try {
+    fs.readdirSync(path.join(__dirname, "../public/upload-vi")).forEach(
+      (file) => {
+        var rm = path.join(__dirname, "../public/upload-vi", file);
+        fs.unlinkSync(rm);
+      }
+    );
+  } catch (e) {
+    console.log("cannot remove file");
+  }
   /**
    * PARSE
    */
@@ -38,7 +42,7 @@ router.post("/upload-vi", (req, res, next) => {
       try {
         fs.renameSync(
           files.file.path,
-          path.join(__dirname, "../public/upload-vi/", xss(files.file.name))
+          path.join(__dirname, "../public/upload-vi/", files.file.name)
         );
         res.render("upload-vi", { message: xss(message) });
       } catch {
