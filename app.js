@@ -22,6 +22,6 @@ files.forEach((file) => {
   var router = require(`./routers/${file}`);
   app.use(router);
 });
-
-app.listen(3000, () => {});
+var port = 3001;
+app.listen(port, () => {console.log(`listening at ${port}`)});
 module.exports = app;
