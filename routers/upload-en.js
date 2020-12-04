@@ -10,19 +10,27 @@ const form = formidable({
 var xss = require("xss");
 const { throws } = require("assert");
 router.get("/upload-en", (req, res) => {
-  res.render("upload-en", { message: null });
+  if (req.session.isAuthed == true) {
+    res.render("upload-en", { message: null });
+  } else {
+    res.redirect("/login");
+  }
 });
 router.post("/upload-en", (req, res, next) => {
   var message = "";
   /**
    * REMOVE ALL FILE
    */
-  fs.readdirSync(path.join(__dirname, "../public/upload-en")).forEach(
-    (file) => {
-      var rm = path.join(__dirname, "../public/upload-en", file);
-      fs.unlinkSync(rm);
-    }
-  );
+  try {
+    fs.readdirSync(path.join(__dirname, "../public/upload-en")).forEach(
+      (file) => {
+        var rm = path.join(__dirname, "../public/upload-en", file);
+        fs.unlinkSync(rm);
+      }
+    );
+  } catch (e) {
+    console.log("cannot remove file");
+  }
   /**
    * PARSE
    */
@@ -34,7 +42,7 @@ router.post("/upload-en", (req, res, next) => {
       try {
         fs.renameSync(
           files.file.path,
-          path.join(__dirname, "../public/upload-en/", xss(files.file.name))
+          path.join(__dirname, "../public/upload-en/", files.file.name)
         );
         res.render("upload-en", { message: xss(message) });
       } catch {

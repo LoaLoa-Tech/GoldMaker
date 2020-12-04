@@ -10,7 +10,11 @@ const form = formidable({
 var xss = require("xss");
 const { throws } = require("assert");
 router.get("/upload-vi", (req, res) => {
-  res.render("upload-vi", { message: null });
+  if (req.session.isAuthed == true) {
+    res.render("upload-vi", { message: null });
+  } else {
+    res.redirect("/login");
+  }
 });
 router.post("/upload-vi", (req, res, next) => {
   var message = "";

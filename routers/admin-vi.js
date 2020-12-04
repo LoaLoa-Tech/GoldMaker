@@ -3,8 +3,12 @@ var path = require("path");
 var express = require("express");
 var router = express.Router();
 router.get("/admin-vi", (req, res) => {
-  var data = require("../data");
-  res.render("admin-vi", { data });
+  if (req.session.isAuthed == true) {
+    var data = require("../data");
+    res.render("admin-vi", { data });
+  } else {
+    res.redirect("/login");
+  }
 });
 router.post("/admin-vi", (req, res) => {
   var { e1, e2, e3, e4, e5, e6, e7 } = req.body;

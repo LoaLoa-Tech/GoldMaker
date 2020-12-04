@@ -14,7 +14,7 @@ router.post("/login", (req, res) => {
   if (username == uname && password == pwd){
 	  console.log(`User ${uname} is editting the page..`);
 	  req.session.isAuthed = true;
-	  res.redirect("/edit");	// sends request to /edit controller
+	  res.redirect("/admin");	// sends request to /edit controller
   } else{
 	message = "Sai mật khẩu hoặc tên đăng nhập.";
 	res.render("login", { message });

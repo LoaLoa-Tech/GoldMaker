@@ -2,20 +2,51 @@
 <html>
   <%-include("./partials/head") %>
   <body>
+    <!-- Start: Navigation with Button -->
+    <nav
+      class="navbar navbar-dark navbar-expand-md sticky-top bg-primary navigation-clean-button"
+    >
+      <div class="container">
+        <a class="navbar-brand text-light" href="/"
+          ><img
+            class="img-fluid logo"
+            src="/assets/img/stock.png?h=b98d12993b2197eca7123d49b6c3d118"
+          /><strong>Money Maker</strong></a
+        ><button
+          data-toggle="collapse"
+          class="navbar-toggler"
+          data-target="#navcol0"
+        >
+          <span class="sr-only">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/en">English</a></li>
+          </ul>
+          <span class="navbar-text actions"> </span>
+        </div>
+      </div>
+    </nav>
+    <!-- End: Navigation with Button -->
     <% if(message!=""){ %>
     <div style="color: red; background-color: pink; border: 1px solid red">
       <%= message %>
     </div>
     <%}%>
-    <form method="post" action="/login" align="center">
-      <label for="username">Username:</label>
-      <input id="username" name="username" type="text" />
-      <br />
+    <section class="my-5">
+      <div class="container">
+        <form method="post" action="/login" align="center">
+          <label for="username">Username:</label>
+          <input id="username" name="username" type="text" class="mb-3 form-control"/>
+          <br />
 
-      <label for="password">Password:</label>
-      <input id="password" name="password" type="password" />
-      <button type="submit">Login</button>
-    </form>
+          <label for="password">Password:</label>
+          <input id="password" name="password" type="password" class="mb-3 form-control"/>
+          <button type="submit"class="btn btn-sm btn-outline-primary">Login</button>
+        </form>
+      </div>
+    </section>
     <%-include("./partials/footer-en");%>
   </body>
 </html>
