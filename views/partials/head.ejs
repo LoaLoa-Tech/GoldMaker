@@ -11,11 +11,12 @@
     property="og:image"
     content="/assets/img/Bitcoin%20P2P-amico.svg?h=35993449df8024cf58dc180270a98013"
   />
+  <%if (data) {%>
   <meta
     name="description"
-    content="Tôi chưa từng Marketing, vì tôi muốn các bạn hiểu sự rủi ro của thị
-trường tài chính khi tham gia mới tìm đến đây, và tôi luôn muốn giảm thiểu rủi ro cho NĐT trong các sản phẩm của mình, và đây là những gì tôi có, hãy đọc và nếu thấy nó có ích, bạn hãy liên hệ với tôi để sử dụng hoặc trở thành đối tác với tôi!"
+    content="<%=data.description%>"
   />
+  <%}%>
   <meta property="og:type" content="website" />
   <meta
     name="twitter:image"

@@ -1,1 +1,1 @@
-module.exports = {youtube:'<iframe width="1033" height="538" class="w-100" src="https://www.youtube.com/embed/v6Y-6ThX0Pg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'}
+module.exports = {youtube:'<iframe width="1033" height="538" class="w-100" src="https://www.youtube.com/embed/v6Y-6ThX0Pg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', description: 'huy'}

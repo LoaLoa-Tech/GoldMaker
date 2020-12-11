@@ -20,6 +20,17 @@
                   value="<%=data.youtube%>"
                 />
               </div>
+              <div class="form-group">
+                <label for="desc">Description</label>
+                <input
+                  type="text"
+                  id="desc"
+                  name="description"
+                  class="form-control"
+                  value="<%=data.description%>"
+                />
+              </div>
+
               <button
                 type="submit"
                 value="Upload"
@@ -29,24 +40,6 @@
               </button>
             </form>
             <%= message %>
-            <form action="/description" method="post" class="mb-3">
-              <div class="form-group">
-                <label for="desc">Description</label>
-                <input
-                  type="text"
-                  id="desc"
-                  name="description"
-                  class="form-control"
-                />
-              </div>
-              <button
-                type="submit"
-                value="Upload"
-                class="btn btn-sm btn-outline-primary"
-              >
-                Change
-              </button>
-            </form>
             <a href="/admin">admin here!</a>
           </div>
         </div>
