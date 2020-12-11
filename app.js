@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(session({secret:'loaloatech'}));
+app.use(session({ secret: "loaloatech" }));
 
 var files = fs.readdirSync(path.join(__dirname, "routers"));
 files.forEach((file) => {
@@ -23,5 +23,7 @@ files.forEach((file) => {
   app.use(router);
 });
 var port = 3001;
-app.listen(port, () => {console.log(`listening at ${port}`)});
+app.listen(port, () => {
+  console.log(`listening at ${port}`);
+});
 module.exports = app;

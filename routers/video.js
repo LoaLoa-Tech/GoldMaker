@@ -6,18 +6,20 @@ var formidable = require("formidable");
 const form = formidable({ uploadDir: "./public/upload", keepExtensions: true });
 var xss = require("xss");
 router.get("/video", (req, res) => {
-  res.render("video", { message: null });
+  var data = require("../data");
+  res.render("video", { message: null, data });
 });
 
 router.post("/video", (req, res) => {
-  var { password, URL } = req.body;
+  var data = require("../data");
+  var { description, URL } = req.body;
   var message = "";
   fs.writeFileSync(path.join(__dirname, "../data/index.js"), "");
   fs.writeFileSync(
     path.join(__dirname, "../data/index.js"),
-    `module.exports = {youtube:'${URL}'}`
+    `module.exports = {youtube:'${URL}', description: '${description}'}`
   );
   message = "Cập nhật thành công";
-  res.render("video", { message });
+  res.render("video", { message, data });
 });
 module.exports = router;
