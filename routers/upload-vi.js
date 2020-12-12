@@ -11,7 +11,7 @@ var xss = require("xss");
 const { throws } = require("assert");
 router.get("/upload-vi", (req, res) => {
   if (req.session.isAuthed == true) {
-    res.render("upload-vi", { message: null });
+    res.render("upload-vi", { message: null, data: null });
   } else {
     res.redirect("/login");
   }
