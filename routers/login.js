@@ -4,7 +4,7 @@ const pwd = "Brick12345"; // correct password
 
 router.get("/login", (req, res) => {
   let message = "";
-  res.render("login", { messagei, data: null });
+  res.render("login", { message, data: null });
 });
 
 router.post("/login", (req, res) => {
