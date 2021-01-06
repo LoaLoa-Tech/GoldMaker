@@ -6,6 +6,7 @@ var logger = require("morgan");
 var fs = require("fs");
 var app = express();
 var session = require("express-session");
+var bodyParser = require('body-parser');
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -16,6 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(session({ secret: "loaloatech" }));
+
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
 
 var files = fs.readdirSync(path.join(__dirname, "routers"));
 files.forEach((file) => {
